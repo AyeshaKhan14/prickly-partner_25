@@ -1,0 +1,19 @@
+.searchcontainer{
+    /* border:2px solid red; */
+    display:block;
+    width:40%;
+    margin:auto;
+    /* margin-top: -20px; */
+    /* padding:10px; */
+    background-color: white;
+
+   
+}
+.searchcontainer>div{
+    flex-direction: column;
+}
+
+.searchcontainer>div>h3{
+    font-size: 12px;
+    text-align:start ;
+}

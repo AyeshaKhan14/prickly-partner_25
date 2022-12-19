@@ -1,0 +1,135 @@
+
+.sam__main__div{
+    display: flex;
+    border: 1px solid green;
+    justify-content: space-between;
+}
+
+.sam__side__bar{
+  width: 35%;
+  border: 1px solid black;
+}
+
+.sam__category__child__div{
+  border: 1px solid black;
+  height: 400px;
+  width: 80%;
+}
+
+.sam__filter__child__div{
+  border: 1px solid black;
+  height: 100rem;
+  width: 80%;
+}
+.sam__hero__section__div{
+    width: 100%;
+    border: 1px solid rgb(64, 255, 0);
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #fff;
+}
+
+.sam__heading__div{
+    border: 1px solid rgb(255, 11, 166);
+
+}
+.sam__banner__img{
+    border: 1px solid rgb(255, 11, 166); 
+    width: 100%;
+}
+
+.sam__sort__div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border: 1px solid rgb(255, 11, 166);
+
+}
+
+.sam__cart__img{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  transition-property: zoom;
+  transition-duration: 1s;
+  /* transition: all 0.5s ease-out; */
+  /* transition: all .2s ease-in-out; */
+  /* transition-duration: 1s; */
+  /* moz-transition: all .2s ease-in-out; */
+}
+.sam__cart__img:hover, sam__cart__img:focus {
+  zoom: 50%;
+}
+.sam__dis__img{
+  /* border: 1px solid rgb(0, 255, 47);  */
+  display: flex;
+  position: absolute;
+  margin-left: -10px;
+}
+.over_the_image{
+  position: absolute;
+  margin-top: 3px;
+  margin-left: -10px;
+  /* border:1px solid rgb(240, 11, 11); */
+  width: 40px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.divs__container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 13px;
+    /* border: 2px solid blue; */
+    
+
+    width: 100%;
+
+}
+
+.child__divs{
+    /* border:1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    /* padding: 50px; */
+}
+
+@media screen and (max-width: 890px) {
+  .divs__container {
+    /* background-color: lightgreen; */
+    grid-template-columns: repeat(3,1fr);
+  }
+  .sam__banner__img{
+      border: 1px solid rgb(255, 11, 166); 
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+    .divs__container {
+      /* background-color: lightgreen; */
+      grid-template-columns: repeat(2,1fr);
+    }
+    .sam__banner__img{
+        border: 1px solid rgb(255, 11, 166); 
+        width: 100%;
+    }
+  }
+
+
+  @media screen and (max-width: 380px) {
+    .divs__container {
+      /* background-color: lightgreen; */
+      grid-template-columns: repeat(1,1fr);
+    }
+    .sam__banner__img{
+        border: 1px solid rgb(255, 11, 166); 
+        width: 100%;
+    }
+  }

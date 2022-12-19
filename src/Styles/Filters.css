@@ -1,0 +1,27 @@
+.categories-parent{
+   height: 200px;
+   overflow-y: scroll;
+}
+
+.filter-option{
+    padding: 3%;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #e6e1e1;
+}
+
+.filter-Brand p {
+    padding: 4%;
+}
+
+.brand-box{
+   height: 200px;
+   overflow-y: scroll;
+}
+
+@media screen and (max-width: 640px) { 
+    .filter-option{
+        padding: 3%;
+        font-size: 0.7rem;
+        border-bottom: 1px solid #e6e1e1;
+    }
+}

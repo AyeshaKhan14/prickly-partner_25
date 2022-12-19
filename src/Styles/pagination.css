@@ -1,0 +1,48 @@
+.btn-container{
+    width: 25%;
+    margin: 2% auto;
+}
+
+.previous-btn{
+    width: 40%;
+    border: none;
+    background-color: #318CE7;
+    color: #ffff;
+    margin: 0px 5px;
+    border-radius: 3px;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+
+.next-btn{
+    width: 40%;
+    border: none;
+    background-color: #318CE7;
+    color: #ffff;
+    margin: 0px 5px;
+    border-radius: 3px;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 640px) { 
+    .btn-container{
+        width: 50%;
+        margin: 4% auto;
+    }
+
+    .previous-btn{
+        border: none;
+        background-color: #318CE7;
+        margin: 0px 2px;
+        padding: 2px 5px;
+    }
+    
+    .next-btn{
+        border: none;
+        background-color: #318CE7;
+        margin: 0px 2px;
+        padding: 2px 5px;
+    }
+
+}
