@@ -33,6 +33,7 @@ import { Link } from "react-router-dom";
 import { getCartData } from "../Redux/CartReducer/action";
 import CartOrderPayment from "../Components/CartOrderPayment";
 import { updateCartData , deleteCartData} from "../Redux/CartReducer/action";
+import { Loading } from "../Components/Loading";
 
 
 
@@ -64,8 +65,6 @@ const CartPage = () => {
   );
 
 
-
-  
   function couponToast() {
     return toast({
       title: `Coupon Applied`,
@@ -118,6 +117,11 @@ const handleRemoveCart=(id)=>{
  dispatch(deleteCartData(id)).then((res)=>{
   dispatch(getCartData())
  })
+}
+
+if(loading)
+{
+  return <Loading/>
 }
 
 

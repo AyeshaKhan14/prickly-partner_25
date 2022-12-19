@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import FruitsCard from "../Components/FruitsCard";
 import { Pagination } from "../Components/Pagination";
 import { Button } from '@chakra-ui/react'
-
 import { getFruitsProducts } from "../Redux/Fruits/action";
 import "../Styles/Groceries.css";
 import GroceriesFilter from "../Components/GroceriesFilter";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { Loading } from "../Components/Loading";
 
 const FruitsProducts = () => {
   const fruits = useSelector((state) => state.FruitsReducer.fruits);
+  const loading=useSelector((state)=>state.FruitsReducer.isLoading)
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [searchParams] = useSearchParams();
@@ -35,7 +36,10 @@ const FruitsProducts = () => {
   const handleSortBy = (sort, order) => {
     dispatch(getFruitsProducts({ sort, order }));
   };
-
+  if(loading)
+  {
+    return <Loading/>
+  }
 
   return (
     <div className="groceries-container">

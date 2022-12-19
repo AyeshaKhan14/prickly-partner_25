@@ -2,10 +2,17 @@
 import { position } from '@chakra-ui/react';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "../Styles/Groceries.css"
+import "../Styles/Groceries.css";
+import {  useSelector } from "react-redux";
+import { Loading } from './Loading';
 
 const MobileCard = ({ item ,productData }) => {
+  const loading = useSelector((state) => state.MobileReducer.isLoading);
 
+  if(loading)
+  {
+    return <Loading/>
+  }
   return (
     <div className='single-product' style={{paddingBottom:"100px"}}>
       <Link to={`/mobileProducts/${productData.id}`}>

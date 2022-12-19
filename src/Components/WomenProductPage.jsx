@@ -5,9 +5,11 @@ import { Pagination } from "./Pagination";
 import Style from "./Women.module.css";
 import { WomenProductCardPage } from "./WomenProductCardPage";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { Loading } from "./Loading";
 
 export const WomenProductPage = () => {
   const womenData = useSelector((state) => state.WomenReducer.women);
+  const loading = useSelector((state) => state.WomenReducer.isLoading);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [searchParams] = useSearchParams();
@@ -32,7 +34,10 @@ export const WomenProductPage = () => {
   const handleSortBy = (sort, order) => {
     dispatch(fetchWomenData({ sort, order }));
   };
-
+  if(loading)
+  {
+    return <Loading/>
+  }
   return (
     <div className={Style.product}>
       <div>

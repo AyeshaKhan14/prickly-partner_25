@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MobileCard from "../Components/MobileCard";
 import { Pagination } from "../Components/Pagination";
 import { Button } from '@chakra-ui/react'
-
+import {Loading} from "../Components/Loading"
 import { getMobilesProducts } from "../Redux/Mobile/action";
 import "../Styles/Groceries.css";
 import MobileFilter from "../Components/MobileFilter";
@@ -11,6 +11,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 
 const MobileProducts = () => {
   const mobiletablets = useSelector((state) => state.MobileReducer.mobiletablets);
+  const loading = useSelector((state) => state.MobileReducer.isLoading);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [searchParams] = useSearchParams();
@@ -35,6 +36,11 @@ const MobileProducts = () => {
   const handleSortBy = (sort, order) => {
     dispatch(getMobilesProducts({ sort, order }));
   };
+
+  if(loading)
+{
+  return <Loading/>
+}
 
 
   return (

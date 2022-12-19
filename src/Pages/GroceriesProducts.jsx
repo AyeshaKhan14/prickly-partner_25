@@ -3,14 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import GroceriesCard from "../Components/GroceriesCard";
 import { Pagination } from "../Components/Pagination";
 import { Button } from '@chakra-ui/react'
-
 import { getGroceriesProducts } from "../Redux/Groceries/action";
 import "../Styles/Groceries.css";
 import GroceriesFilter from "../Components/GroceriesFilter";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { Loading } from "../Components/Loading";
+
 
 const GroceriesProducts = () => {
   const groceries = useSelector((state) => state.GroceriesReducer.groceries);
+
+  const loading=useSelector((state)=>state.GroceriesReducer.isLoading)
+
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [searchParams] = useSearchParams();
@@ -35,7 +39,11 @@ const GroceriesProducts = () => {
   const handleSortBy = (sort, order) => {
     dispatch(getGroceriesProducts({ sort, order }));
   };
-
+   
+  if(loading)
+  {
+    return <Loading/>
+  }
 
   return (
     <div className="groceries-container">

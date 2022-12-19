@@ -5,11 +5,13 @@ import Style from "./Women.module.css";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { fetchKitchenData } from "../Redux/KitchenwareReducer/action";
 import { KitchenwareProductCartPage } from "./KitchenwareProductCartPage";
+import {Loading} from "../Components/Loading"
 
 export const KitchenwareProductPage = () => {
   const KitchenwareData = useSelector(
     (state) => state.KitchenwareReducer.kitchenware
   );
+  const loading = useSelector((state) => state.KitchenwareReducer.isLoading);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [searchParams] = useSearchParams();
@@ -36,6 +38,10 @@ export const KitchenwareProductPage = () => {
     dispatch(fetchKitchenData({ sort, order }));
   };
 
+  if(loading)
+{
+  return <Loading/>
+}
   return (
     <div className={Style.product}>
       <div>
